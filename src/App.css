@@ -1,0 +1,210 @@
+.menu {
+  display: flex;
+  justify-content: center;
+  background-color: #222831 !important;
+  margin: 0em !important;
+  color: #EEEEEE;
+  padding-bottom: 1em;
+  padding-top: 1em;
+
+}
+body {
+  background-color: #DDF2FD;
+}
+
+.NavBarMenu  {
+  display: flex;
+  justify-content: center;
+  background-color: #393E46 !important;
+  margin: 0em !important;
+  border-radius: 0 !important;
+  border-bottom-left-radius: 1em !important;
+  border-bottom-right-radius: 1em !important;
+  padding-bottom: 0.5em;
+  margin-bottom: 3em !important;
+}
+
+
+.container {
+  display: flex;
+  flex: 3 1;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 5.5em;
+  height: 25em;
+  gap: 20px;
+  width: 95em;
+  
+}
+
+
+.containerRecherche {
+  top: 0;
+  position: relative;
+
+}
+
+.allInput {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #445069;
+  padding-bottom: 4em !important;
+  border-radius: 2em;
+  border-bottom-left-radius: 0em;
+  border-bottom-right-radius: 0em;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  
+
+}
+.AllDrapeaux {
+  box-shadow: rgba(17, 17, 26, 0.041) 0px 4px 16px, rgba(17, 17, 26, 0.034) 0px 8px 24px, rgba(17, 17, 26, 0.062) 0px 16px 56px;
+  margin-top: 1em;
+  padding: 2em;
+  gap: 2em;
+
+
+
+}
+
+.inputPAys input {
+  width: 30em;
+  margin-bottom: 1em !important;
+
+}
+
+.allInput h1 {
+  color: #EEEEEE !important;
+  padding-top: 2em;
+
+
+}
+
+.titreAcceuil {
+  background-color: #3C5B6F;
+  height: 40em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1000em !important;
+  border-radius: 0.6em;
+  position: relative;
+  right: 15em;
+  color: #FFEAE3;
+  box-shadow: rgba(50, 50, 93, 0.068) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.185) 0px 18px 36px -18px inset;
+  text-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.titreAcceuil h1 {
+  position: relative;
+  animation: bouge 1s infinite ease-in-out alternate-reverse;
+  position: relative;
+
+}
+
+.imageAcceuil  {
+  background-color: #3C5B6F;
+  height: 35em !important;
+  display: flex;
+  border-radius: 100%;
+  align-items: center;
+  justify-content: center;
+  color: #EEEEEE;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  text-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  transition: scale 0.3s ease-in-out;
+
+
+}
+
+.imageAcceuil img {
+  filter: drop-shadowrgba(rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px);
+}
+
+.ligne {
+  position: absolute;
+  background-color: #3C5B6F;
+  height: 0.3em;
+  width: 40em;
+  left: 20em;
+  bottom: 6em;
+  z-index: -1;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  
+
+}
+
+.laTerre {
+  animation: rotation 25s infinite linear;
+
+}
+
+.imageAcceuil:hover {
+  scale: 1.1;
+
+}
+
+@keyframes rotation {
+  from {
+      transform: rotate(0deg);
+  }
+  to {
+      transform: rotate(360deg);
+  }
+}
+
+@keyframes bouge {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(1.3em);
+  }
+
+}
+
+
+.PaysContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #3C5B6F;
+  
+  border-radius: 1em;
+  height: 40em;
+  gap: 15em;
+  position: relative;
+  color: #F8EDE3;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+
+}
+
+.ui.segment {
+  color: #161A30;
+}
+
+.PaysContainer h1{
+  font-size: 5em;
+}
+
+.PaysContainer img{
+  position: relative;
+  left: 10em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.autreInfos {
+  position: relative;
+
+}
+
+.imageP {
+  width: 35em !important;
+  height: 20em;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
