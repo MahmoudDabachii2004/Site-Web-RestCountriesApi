@@ -3,7 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import { Container, Label, Segment } from "semantic-ui-react";
 const Pays = (props) => {
     const alphacode = useParams().codePays;
-        const [pays, setPays] = useState([]);
+    const [pays, setPays] = useState([]);
 
     useEffect(() => {
         fetch(`https://restcountries.com/v3.1/alpha/${alphacode}`)

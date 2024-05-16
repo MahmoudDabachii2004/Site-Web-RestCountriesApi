@@ -15,10 +15,7 @@ const Recherche = (props) => {
     }
 
     console.log(pays)
-    /*  const renderPays = () => {
-       return pays.map((counter)=>{ return (<Card> hi</Card>) })
-    }
-    */
+
 
     const renderPays = () => {
         return pays.map((moncompteur) => {
@@ -41,12 +38,12 @@ const Recherche = (props) => {
     return (
         <Container className="containerRecherche">
             <div className="allInput">
-                <h1>Recherche NomPays</h1>
+                <h1>Entrer Un Nom De Pays</h1>
                 <div className="inputPAys">
                     <Label pointing="right">Pays</Label>
                     <Input type="text" value={nom} onChange={(e) => setNom(e.target.value)}></Input>
                 </div>
-                <Button onClick={onClick}>Rechercher le pays</Button>
+                <Button onClick={onClick}>Rechercher</Button>
             </div>
 
             <h2> Résultats de la recherche : </h2>
