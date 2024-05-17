@@ -6,8 +6,8 @@ import Page404 from './composants/Page404';
 import Recherche from './composants/Recherche';
 import Pays from './composants/Pays';
 import RechercheCapital from './composants/RechercheCapital';
-import RechercheDevise from './composants/RechercheDevise';
-import RechercheLangue from './composants/RechercheLangue';
+import RechercheDevise from './composants/rechercheDevise';
+import RechercheLangue from './composants/rechercheLangue';
 import RechercheRegion from './composants/RechercheRegion';
 import Header from './composants/Header';
 
@@ -17,15 +17,9 @@ import Header from './composants/Header';
 
 
 function Footer() {
-    const footerStyle = {
-        position: "absolute",
-        bottom: "53.7em",
-        width: "100%",
-        textAlign: "center",
-    };
     
     return (
-    <footer style={footerStyle}>
+    <footer>
         <p>© 2024 Mon Site Web</p>
     </footer>
     );
@@ -55,7 +49,7 @@ function App() {
                         <Route path="/rechercheDevise" element={<RechercheDevise />} />
                         <Route path="/rechercheRegion" element={<RechercheRegion />} />
                         <Route path="/rechercheLangue" element={<RechercheLangue />} />
-                        <Route path="*" element={<Page404 />} />
+                        <Route path="*" element={<Page404 />}  />
                     </Route>
                 </Routes>
             <Footer />
