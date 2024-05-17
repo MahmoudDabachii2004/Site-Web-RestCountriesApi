@@ -1,50 +1,65 @@
-import { BrowserRouter, Route, NavLink, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, NavLink, Routes, Outlet } from 'react-router-dom';
 import './style/App.css';
 import React, { useState } from 'react';
 import Accueil from './composants/Accueil';
 import Page404 from './composants/Page404';
 import Recherche from './composants/Recherche';
 import Pays from './composants/Pays';
-import { Menu } from 'semantic-ui-react';
 import RechercheCapital from './composants/RechercheCapital';
 import RechercheDevise from './composants/RechercheDevise';
 import RechercheLangue from './composants/RechercheLangue';
 import RechercheRegion from './composants/RechercheRegion';
-
+import Header from './composants/Header';
 
 //Currency https://restcountries.com/v3.1/all?fields=currencies
 //Language
 //Calling code donne votre numero de telephone et donne quelle pays
+
+
+function Footer() {
+    const footerStyle = {
+        position: "absolute",
+        bottom: "53.7em",
+        width: "100%",
+        textAlign: "center",
+    };
+    
+    return (
+    <footer style={footerStyle}>
+        <p>© 2024 Mon Site Web</p>
+    </footer>
+    );
+  }
+
+function Layout() {
+    return (
+      <div>
+        <Outlet />
+      </div>
+    );
+  }
 
 function App() {
     return (
 
     <React.Fragment>
         <BrowserRouter>
-            <header>
-                <h2 className='menu' >Menu de navigation</h2>
-                <Menu className='NavBarMenu'>
-                    <Menu.Item> <NavLink to='/' style={({ isActive }) => ({ color: isActive ? "#EEEEEE" : "#00ADB5", fontWeight: isActive ? 'bold' : 'normal'})} exact> Accueil </NavLink></Menu.Item>
-                    <Menu.Item> <NavLink to='/recherche' style={({ isActive }) => ({ color: isActive ? "#EEEEEE" : "#00ADB5",fontWeight: isActive ? 'bold' : 'normal' })}> Trouver un pays avec son nom</NavLink></Menu.Item>
-                    <Menu.Item> <NavLink to='/rechercheCapital' style={({ isActive }) => ({ color: isActive ? "#EEEEEE" : "#00ADB5",fontWeight: isActive ? 'bold' : 'normal' })}> Trouver un pays avec sa capital </NavLink></Menu.Item>
-                    <Menu.Item> <NavLink to='/rechercheDevise' style={({ isActive }) => ({ color: isActive ? "#EEEEEE" : "#00ADB5", fontWeight: isActive ? 'bold' : 'normal' })}>Trouver Devise D'un Pays</NavLink></Menu.Item>
-                    <Menu.Item> <NavLink to='/rechercheRegin' style={({ isActive }) => ({ color: isActive ? "#EEEEEE" : "#00ADB5", fontWeight: isActive ? 'bold' : 'normal' })}>Trouver Les Pays Dans Votre Region</NavLink></Menu.Item>
-                    <Menu.Item> <NavLink to='/rechercheLangue' style={({ isActive }) => ({ color: isActive ? "#EEEEEE" : "#00ADB5", fontWeight: isActive ? 'bold' : 'normal' })}> Trouver un pays avec sa langue </NavLink></Menu.Item>
-                    <Menu.Item> <NavLink to='/pays' style={({ isActive }) => ({ color: isActive ? "#EEEEEE" : "#00ADB5", fontWeight: isActive ? 'bold' : 'normal' })}> PAYS </NavLink></Menu.Item>
-                </Menu>
-            </header>
-           
-         
-            <Routes>
-                <Route path="/" element={<Accueil message="Cher Utilisateur" />} />
-                <Route path="/recherche" element={<Recherche />} />
-                <Route path="/rechercheCapital" element={<RechercheCapital />} />
-                <Route path="/pays/:codePays" element={<Pays />} />
-                <Route path="/rechercheDevise" element={<RechercheDevise />} />
-                <Route path="/rechercheRegin" element={<RechercheRegion />} />
-                <Route path="/rechercheLangue" element={<RechercheLangue />} />
-                <Route path="*" element={<Page404 />} />
-            </Routes>
+            <Header />
+
+                <Routes>
+                    <Route path="/" element={<Layout />}>
+                        <Route index element={<Accueil message="Cher Utilisateur" />} />
+                        <Route path="/recherche" element={<Recherche />} />
+                        <Route path="/rechercheCapital" element={<RechercheCapital />} />
+                        <Route path="/pays/:codePays" element={<Pays />} />
+                        <Route path="/rechercheDevise" element={<RechercheDevise />} />
+                        <Route path="/rechercheRegion" element={<RechercheRegion />} />
+                        <Route path="/rechercheLangue" element={<RechercheLangue />} />
+                        <Route path="*" element={<Page404 />} />
+                    </Route>
+                </Routes>
+            <Footer />
+
         </BrowserRouter>
     </React.Fragment>
     );
