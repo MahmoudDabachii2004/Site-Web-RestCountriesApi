@@ -7,8 +7,9 @@ import Recherche from './composants/Recherche';
 import Pays from './composants/Pays';
 import { Menu } from 'semantic-ui-react';
 import RechercheCapital from './composants/RechercheCapital';
-import RechercheDevise from './composants/rechercheDevise';
-import RechercheLangue from './composants/rechercheLangue';
+import RechercheDevise from './composants/RechercheDevise';
+import RechercheLangue from './composants/RechercheLangue';
+import RechercheRegion from './composants/RechercheRegion';
 
 
 //Currency https://restcountries.com/v3.1/all?fields=currencies
@@ -27,18 +28,20 @@ function App() {
                     <Menu.Item> <NavLink to='/recherche' style={({ isActive }) => ({ color: isActive ? "#EEEEEE" : "#00ADB5",fontWeight: isActive ? 'bold' : 'normal' })}> Trouver un pays avec son nom</NavLink></Menu.Item>
                     <Menu.Item> <NavLink to='/rechercheCapital' style={({ isActive }) => ({ color: isActive ? "#EEEEEE" : "#00ADB5",fontWeight: isActive ? 'bold' : 'normal' })}> Trouver un pays avec sa capital </NavLink></Menu.Item>
                     <Menu.Item> <NavLink to='/rechercheDevise' style={({ isActive }) => ({ color: isActive ? "#EEEEEE" : "#00ADB5", fontWeight: isActive ? 'bold' : 'normal' })}>Trouver Devise D'un Pays</NavLink></Menu.Item>
-                    <Menu.Item> <NavLink to='/pays' style={({ isActive }) => ({ color: isActive ? "#EEEEEE" : "#00ADB5", fontWeight: isActive ? 'bold' : 'normal' })}> PAYS </NavLink></Menu.Item>
+                    <Menu.Item> <NavLink to='/rechercheRegin' style={({ isActive }) => ({ color: isActive ? "#EEEEEE" : "#00ADB5", fontWeight: isActive ? 'bold' : 'normal' })}>Trouver Les Pays Dans Votre Region</NavLink></Menu.Item>
                     <Menu.Item> <NavLink to='/rechercheLangue' style={({ isActive }) => ({ color: isActive ? "#EEEEEE" : "#00ADB5", fontWeight: isActive ? 'bold' : 'normal' })}> Trouver un pays avec sa langue </NavLink></Menu.Item>
+                    <Menu.Item> <NavLink to='/pays' style={({ isActive }) => ({ color: isActive ? "#EEEEEE" : "#00ADB5", fontWeight: isActive ? 'bold' : 'normal' })}> PAYS </NavLink></Menu.Item>
                 </Menu>
             </header>
            
          
             <Routes>
-                <Route path="/" element={<Accueil />} />
+                <Route path="/" element={<Accueil message="Cher Utilisateur" />} />
                 <Route path="/recherche" element={<Recherche />} />
                 <Route path="/rechercheCapital" element={<RechercheCapital />} />
                 <Route path="/pays/:codePays" element={<Pays />} />
                 <Route path="/rechercheDevise" element={<RechercheDevise />} />
+                <Route path="/rechercheRegin" element={<RechercheRegion />} />
                 <Route path="/rechercheLangue" element={<RechercheLangue />} />
                 <Route path="*" element={<Page404 />} />
             </Routes>

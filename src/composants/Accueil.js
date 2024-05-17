@@ -3,14 +3,15 @@ import { Container } from "semantic-ui-react";
 import logoAcceuil from "../logoAcceuil.png"; // Adjust the path accordingly
 
 const Accueil = (props) => { 
+
     return (
         <Container>
             <div className="container">
                 <div className="titreAcceuil">
-                    <h1 className="titreAcceuilTexte">Bienvenue sur mon site web sur les PAYS!!!</h1>
+                <h1 className="titreAcceuilTexte">Bienvenue {props.message} sur mon site web sur les PAYS!!!</h1>
                 </div>
                 <div className="imageAcceuil">
-                    <img className="laTerre"src={logoAcceuil} alt=""/>
+                    <img className="laTerre" src={logoAcceuil} alt=""/>
                 </div>
             </div>
             <div className="ligne"></div>

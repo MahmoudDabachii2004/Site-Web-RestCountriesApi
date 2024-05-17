@@ -14,7 +14,6 @@ const Recherche = (props) => {
             .catch((erreur) => console.log(erreur));
     }
 
-    console.log(pays)
 
 
     const renderPays = () => {

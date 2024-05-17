@@ -38,6 +38,17 @@ const RechercheDevise = () => {
     }, [devisesCode])
     
 
+    const [LesDeviseBoxStyle, setLesDeviseBoxStyle] = useState({
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "space-between",
+        flexWrap: "wrap",
+        transition: "all 1s ease-in-out",
+        height: "auto",
+        
+
+    });
+
     //permet de recuper de l'api restcountries les currencies
     const fetchDevise = async () => {
         try {
@@ -61,23 +72,11 @@ const RechercheDevise = () => {
         });
     }
 
-
-
-    const [LesDeviseBoxStyle, setLesDeviseBoxStyle] = useState({
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "space-between",
-        flexWrap: "wrap",
-        transition: "all 1s ease-in-out",
-        height: "auto",
-        
-
-    });
     
     const AfficherPays = async (currencyCountry) => {
         setopacityCard(0)
         setTimeout(async () => {
-            const data = await fetch(`https://restcountries.com/v3.1/currency/${currencyCountry}`);
+            const data = await fetch(`https://restcountries.com/v3.1/currency/${currencyCountry}?fields=cca3,name,flags,capital`);
             const pays = await data.json();
             console.log(pays)
             setopacityCard(100)
