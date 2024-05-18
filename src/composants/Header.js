@@ -1,15 +1,19 @@
 
-import React from "react";
+import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { Menu } from 'semantic-ui-react';
+import { Context } from "../App";
 
 
 
 
 const Header = ()  => {
+
+    const [name, setName] = useContext(Context)
+
     return (
         <header>
-        <h2 className='menu' >Menu de navigation</h2>
+        <h2 className='menu' >Menu de navigation : {name}</h2>
         <Menu className='NavBarMenu'>
             <Menu.Item> <NavLink to='/' style={({ isActive }) => ({ color: isActive ? "#EEEEEE" : "#00ADB5", fontWeight: isActive ? 'bold' : 'normal'})} exact> Accueil </NavLink></Menu.Item>
             <Menu.Item> <NavLink to='/recherche' style={({ isActive }) => ({ color: isActive ? "#EEEEEE" : "#00ADB5",fontWeight: isActive ? 'bold' : 'normal' })}> Trouver un pays avec son nom</NavLink></Menu.Item>

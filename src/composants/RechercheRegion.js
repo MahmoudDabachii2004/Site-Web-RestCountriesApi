@@ -19,22 +19,6 @@ const RechercheRegion = () => {
         }
     }, [searchParams]);
 
-    
-    const renderPays = () => {
-        return pays.map((country) => (
-            <Link to={`/pays/${country.cca3}`} key={country.cca3}>
-                <Card>
-                    <Image src={country.flags?.png} />
-                    <Card.Content>
-                        <Card.Header>
-                            <h3>{country.name.common}</h3>
-                            <h5>{country.continents[0]}</h5>
-                        </Card.Header>
-                    </Card.Content>
-                </Card>
-            </Link>
-        ));
-    };
 
     return (
         <Container className="containerRecherche">
@@ -52,7 +36,7 @@ const RechercheRegion = () => {
                 </div>
             </form>
             <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", width: "100%", marginTop: "5em"}}>
-                {pays.length > 0 ? (renderPays()) : (<h1>Aucun pays trouvé. Veuillez entrer une région valide.</h1>)}
+                {pays.length > 0 ? <Pagination pays={pays} itemsPerPage={6}/> : (<h1>Aucun pays trouvé. Veuillez entrer une région valide.</h1>)}
             </div>
         </Container>
     );
