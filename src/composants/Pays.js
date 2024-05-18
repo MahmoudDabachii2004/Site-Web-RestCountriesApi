@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
-import { Container, Label, Segment } from "semantic-ui-react";
+import { Link, useNavigate, useParams } from "react-router-dom";
+import { Button, Container, Label, Segment } from "semantic-ui-react";
 const Pays = (props) => {
     const alphacode = useParams().codePays;
     const [pays, setPays] = useState([]);
@@ -14,6 +14,11 @@ const Pays = (props) => {
 
     console.log(pays)
 
+    const navigate = useNavigate();
+
+    const goBackToPreviousPage = () => {
+      navigate(-1); 
+    };
 
     return (
         <div>
@@ -36,8 +41,10 @@ const Pays = (props) => {
                                 : undefined
                             }
                         </div>
+                    <Button onClick={goBackToPreviousPage}>Retourner</Button>
                     </div>
                     <br /> <br />
+
                 </div>
                 </Container >
                 : undefined}

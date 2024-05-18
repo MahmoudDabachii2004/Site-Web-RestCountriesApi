@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Link, useSearchParams } from "react-router-dom"; 
 import { Button, Container, Input, Card, Image } from "semantic-ui-react";
 
+import Pagination from "./Affichage/Pagination";
+
 const RechercheRegion = () => {
     const [region, setRegion] = useState("");
     const [pays, setPays] = useState([]);
